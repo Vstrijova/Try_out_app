@@ -22,6 +22,15 @@ language = st.radio( "Виберіть мову - Выберите язык" , (
 
 if language == 'Русский':
   placechoice = st.selectbox("Куда ты хочешь пойти сегодня? Bыбери одно из указанных мест:", ('Площадка для игр', 'Школа', 'Магазин канцтоваров'))
+ if placechoice == 'Площадка для игр':
+    image1 = Image.open('playground.jpg')
+    st.image(image1, caption='Photo by Pond Juprasong on Unsplash')
+ if placechoice == 'Школа':
+    image2 = Image.open('school.jpg')
+    st.image(image2, caption='Photo by Kenny Eliason on Unsplash')
+ if placechoice == 'Магазин канцтоваров':
+    image3 = Image.open('stationary_shop.jpg')
+    st.image(image3, caption='Photo by @candelarms on Unsplash')
 
 cola, colb, colc, cold = st.columns(4)
 with cola:
@@ -90,7 +99,15 @@ if language == 'Yкраїнський':
     st.image(image3, caption='Photo by @candelarms on Unsplash')
 else:
   pass
-
+cola, colb, colc, cold = st.columns(4)
+  with cola:
+    st.subheader("Корисні вирази")
+  with colb:
+    st.subheader("Італійський переклад")
+  with colc:
+    st.subheader("От як це звучить")
+  with cold:
+    st.subheader("На кирилиці")
 phrases_ukr = {'Майданчик для ігор': [{'Підемо в парк' : 'Andiamo al parco'},
                                    {'Давай пограємо в хованки' : 'Giochiamo a nascondino'},
                                    {'Xодімо на гойдалки' : "Andiamo sull'altalena"},
