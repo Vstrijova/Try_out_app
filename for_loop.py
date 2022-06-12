@@ -54,29 +54,29 @@ if language == 'Русский':
                                       {'Сколько это стоит?' : 'Quanto costa?'}]
                         }
   phrase_list_place = phrases_ru[placechoice]
-    for phrasecouple in phrase_list_place:
-      for rus, ita in phrasecouple.items():
-        col1, col2, col3, col4 = st.columns(4)
-        with col1:
-          st.write(rus)
-        with col2:
-          translation = translator.translate(rus, dest= 'it')
-          translated_text= translation.text
-          if translated_text != ita:
-            translated_text = ita
-          else:
-            pass
-          st.write(translated_text)
-        with col3:
-          tts1=gTTS(translated_text, lang = 'it')
-          tts1.save('your_file.mp3')
-          audio_file = open('your_file.mp3', 'rb')
-          st.audio(data=audio_file, format="audio/mp3", start_time = 0)
-        with col4:
-          transliterated_text = translit(translated_text, 'ru')
-          st.write(transliterated_text)
-    else:
-      pass
+  for phrasecouple in phrase_list_place:
+    for rus, ita in phrasecouple.items():
+      col1, col2, col3, col4 = st.columns(4)
+      with col1:
+        st.write(rus)
+      with col2:
+        translation = translator.translate(rus, dest= 'it')
+        translated_text= translation.text
+        if translated_text != ita:
+          translated_text = ita
+        else:
+          pass
+        st.write(translated_text)
+      with col3:
+        tts1=gTTS(translated_text, lang = 'it')
+        tts1.save('your_file.mp3')
+        audio_file = open('your_file.mp3', 'rb')
+        st.audio(data=audio_file, format="audio/mp3", start_time = 0)
+      with col4:
+        transliterated_text = translit(translated_text, 'ru')
+        st.write(transliterated_text)
+  else:
+    pass
   
 if language == 'Yкраїнський':
   places = st.selectbox("Куди ти хочеш піти сьогодні? Bыбери одно з вказаних місць:", ('Майданчик для ігор', 'Школа', 'Магазин канцтоварів'))
