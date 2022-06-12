@@ -24,9 +24,9 @@ if language == 'Русский':
   placechoice = st.selectbox("Куда ты хочешь пойти сегодня? Bыбери одно из указанных мест:", ('Площадка для игр', 'Школа', 'Магазин канцтоваров'))
   places = ['Площадка для игр', 'Школа', 'Магазин канцтоваров']
   images = ['playground.jpg', 'school.jpg', 'stationary_shop.jpg']
-  for place, image in zip(places, images)
-  if place = placechoice:
-    st.image(image)
+  for place, image in zip(places, images):
+    if place = placechoice:
+      st.image(image)
 cola, colb, colc, cold = st.columns(4)
 with cola:
   st.subheader("Полезные выражения")
