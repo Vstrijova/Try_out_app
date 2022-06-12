@@ -78,14 +78,14 @@ for phrasecouple in phrase_list_place:
     pass
   
 if language == 'Yкраїнський':
-  placechoice = st.selectbox("Куди ти хочеш піти сьогодні? Bыбери одно з вказаних місць:", ('Майданчик для ігор', 'Школа', 'Магазин канцтоварів'))
-  if placechoice == 'Майданчик для ігор':
+  placechoiceukr = st.selectbox("Куди ти хочеш піти сьогодні? Bыбери одно з вказаних місць:", ('Майданчик для ігор', 'Школа', 'Магазин канцтоварів'))
+  if placechoiceukr == 'Майданчик для ігор':
     image1 = Image.open('playground.jpg')
     st.image(image1, caption='Photo by Pond Juprasong on Unsplash')
-  if placechoice == 'Школа':
+  if placechoiceukr == 'Школа':
     image2 = Image.open('school.jpg')
     st.image(image2, caption='Photo by Kenny Eliason on Unsplash')
-  if placechoice == 'Магазин канцтоварів':
+  if placechoiceukr == 'Магазин канцтоварів':
     image3 = Image.open('stationary_shop.jpg')
     st.image(image3, caption='Photo by @candelarms on Unsplash')
 else:
@@ -107,7 +107,7 @@ phrases_ukr = {'Майданчик для ігор': [{'Підемо в парк
                                       {'Мені потрібні кольорові олівці' : 'Mi servirebbero le matite colorate'},
                                       {'Скільки це коштує?' : 'Quanto costa?'}]
                         }
-phrase_list_place = phrases_ukr[placechoice]
+phrase_list_place = phrases_ukr[placechoiceukr]
 for phrasecouple in phrase_list_place:
   for rus, ita in phrasecouple.items():
     col1, col2, col3, col4 = st.columns(4)
