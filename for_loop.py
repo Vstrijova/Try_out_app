@@ -120,7 +120,7 @@ if language == 'Yкраїнський':
       with col1:
         st.write(ukr)
       with col2:
-        translation = translator.translate(rus, dest= 'it')
+        translation = translator.translate(ukr, dest= 'it')
         translated_text= translation.text
         if translated_text != ita:
           translated_text = ita
