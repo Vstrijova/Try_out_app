@@ -79,17 +79,17 @@ if language == 'Русский':
     pass
   
 if language == 'Yкраїнський':
-  places = st.selectbox("Куди ти хочеш піти сьогодні? Bыбери одно з вказаних місць:", ('Майданчик для ігор', 'Школа', 'Магазин канцтоварів'))
+  placechoiceukr = st.selectbox("Куди ти хочеш піти сьогодні? Bыбери одно з вказаних місць:", ('Майданчик для ігор', 'Школа', 'Магазин канцтоварів'))
   placesukr = ['Майданчик для ігор', 'Школа', 'Магазин канцтоварів']
   images = ['playground.jpg', 'school.jpg', 'stationary_shop.jpg']
   for place, image in zip(placesukr, images):
-    if placeukr == places:
+    if placeukr == placechoiceukr:
       st.image(image)
     else:
       pass
   cola, colb, colc, cold = st.columns(4)
   with cola:
-     st.subheader("Корисні вирази")
+    st.subheader("Корисні вирази")
   with colb:
     st.subheader("Італійський переклад")
   with colc:
@@ -113,7 +113,7 @@ if language == 'Yкраїнський':
                                       {'Мені потрібні кольорові олівці' : 'Mi servirebbero le matite colorate'},
                                       {'Скільки це коштує?' : 'Quanto costa?'}]
                         }
-  phrase_list_place = phrases_ukr[places]
+  phrase_list_place = phrases_ukr[placecoicheukr]
   for phrasecouple in phrase_list_place:
     for ukr, ita in phrasecouple.items():
       col1, col2, col3, col4 = st.columns(4)
