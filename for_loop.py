@@ -83,7 +83,7 @@ if language == 'Yкраїнський':
   placesukr = ['Майданчик для ігор', 'Школа', 'Магазин канцтоварів']
   images = ['playground.jpg', 'school.jpg', 'stationary_shop.jpg']
   for place, image in zip(placesukr, images):
-    if placeukr == placechoiceukr:
+    if placesukr == placechoiceukr:
       st.image(image)
     else:
       pass
