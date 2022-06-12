@@ -118,12 +118,12 @@ phrases_ukr = {'Майданчик для ігор': [{'Підемо в парк
                                       {'Мені потрібні кольорові олівці' : 'Mi servirebbero le matite colorate'},
                                       {'Скільки це коштує?' : 'Quanto costa?'}]
                         }
-phrase_list_place = phrases_ukr[placechoice]
+phrase_list_place = phrases_ukr[placechoiceukr]
 for phrasecouple in phrase_list_place:
-  for rus, ita in phrasecouple.items():
+  for ukr, ita in phrasecouple.items():
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-      st.write(rus)
+      st.write(ukr)
     with col2:
       translation = translator.translate(rus, dest= 'it')
       translated_text= translation.text
