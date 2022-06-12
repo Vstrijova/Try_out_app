@@ -118,7 +118,7 @@ phrases_ukr = {'Майданчик для ігор': [{'Підемо в парк
                                       {'Мені потрібні кольорові олівці' : 'Mi servirebbero le matite colorate'},
                                       {'Скільки це коштує?' : 'Quanto costa?'}]
                         }
-phrase_list_place = phrases_ukr[placechoiceukr]
+phrase_list_place = phrases_ukr[placechoice]
 for phrasecouple in phrase_list_place:
   for rus, ita in phrasecouple.items():
     col1, col2, col3, col4 = st.columns(4)
