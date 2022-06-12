@@ -22,23 +22,22 @@ language = st.radio( "Виберіть мову - Выберите язык" , (
 
 if language == 'Русский':
   placechoice = st.selectbox("Куда ты хочешь пойти сегодня? Bыбери одно из указанных мест:", ('Площадка для игр', 'Школа', 'Магазин канцтоваров'))
-  
   places = ['Площадка для игр', 'Школа', 'Магазин канцтоваров']
   images = ['playground.jpg', 'school.jpg', 'stationary_shop.jpg']
   for place, image in zip(places, images):
     if place == placechoice:
       st.image(image)
-cola, colb, colc, cold = st.columns(4)
-with cola:
-  st.subheader("Полезные выражения")
-with colb:
-  st.subheader("Итальянский перевод")
-with colc:
-  st.subheader("Вот как это звучит")
-with cold:
+  cola, colb, colc, cold = st.columns(4)
+  with cola:
+    st.subheader("Полезные выражения")
+  with colb:
+    st.subheader("Итальянский перевод")
+  with colc:
+    st.subheader("Вот как это звучит")
+  with cold:
   st.subheader("На кириллице")
       
-phrases_ru = {'Площадка для игр': [{'Пойдем в парк' : 'Andiamo al parco'},
+  phrases_ru = {'Площадка для игр': [{'Пойдем в парк' : 'Andiamo al parco'},
                                    {'Давай играть в прятки' : 'Giochiamo a nascondino'},
                                    {'Давай покатаемся на качелях' : "Andiamo sull'altalena"},
                                    {'Пойдем на горку' : 'Andiamo sullo scivolo'},
@@ -54,55 +53,51 @@ phrases_ru = {'Площадка для игр': [{'Пойдем в парк' : '
                                       {'Мне нужны цветные карандаши' : 'Mi servirebbero le matite colorate'},
                                       {'Сколько это стоит?' : 'Quanto costa?'}]
                         }
-
-
-
-phrase_list_place = phrases_ru[placechoice]
-for phrasecouple in phrase_list_place:
-  for rus, ita in phrasecouple.items():
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-      st.write(rus)
-    with col2:
-      translation = translator.translate(rus, dest= 'it')
-      translated_text= translation.text
-      if translated_text != ita:
-        translated_text = ita
-      else:
-        pass
-      st.write(translated_text)
-    with col3:
-      tts1=gTTS(translated_text, lang = 'it')
-      tts1.save('your_file.mp3')
-      audio_file = open('your_file.mp3', 'rb')
-      st.audio(data=audio_file, format="audio/mp3", start_time = 0)
-    with col4:
-      transliterated_text = translit(translated_text, 'ru')
-      st.write(transliterated_text)
-  else:
-    pass
+  phrase_list_place = phrases_ru[placechoice]
+    for phrasecouple in phrase_list_place:
+      for rus, ita in phrasecouple.items():
+        col1, col2, col3, col4 = st.columns(4)
+        with col1:
+          st.write(rus)
+        with col2:
+          translation = translator.translate(rus, dest= 'it')
+          translated_text= translation.text
+          if translated_text != ita:
+            translated_text = ita
+          else:
+            pass
+          st.write(translated_text)
+        with col3:
+          tts1=gTTS(translated_text, lang = 'it')
+          tts1.save('your_file.mp3')
+          audio_file = open('your_file.mp3', 'rb')
+          st.audio(data=audio_file, format="audio/mp3", start_time = 0)
+        with col4:
+          transliterated_text = translit(translated_text, 'ru')
+          st.write(transliterated_text)
+    else:
+      pass
   
 if language == 'Yкраїнський':
   places = st.selectbox("Куди ти хочеш піти сьогодні? Bыбери одно з вказаних місць:", ('Майданчик для ігор', 'Школа', 'Магазин канцтоварів'))
-  
   placesukr = ['Майданчик для ігор', 'Школа', 'Магазин канцтоварів']
   images = ['playground.jpg', 'school.jpg', 'stationary_shop.jpg']
   for place, image in zip(placesukr, images):
     if placeukr == places:
       st.image(image)
-else:
-  pass
-cola, colb, colc, cold = st.columns(4)
-with cola:
-  st.subheader("Корисні вирази")
-with colb:
-  st.subheader("Італійський переклад")
-with colc:
-  st.subheader("От як це звучить")
-with cold:
-  st.subheader("На кирилиці")
+    else:
+      pass
+  cola, colb, colc, cold = st.columns(4)
+  with cola:
+     st.subheader("Корисні вирази")
+  with colb:
+    st.subheader("Італійський переклад")
+  with colc:
+    st.subheader("От як це звучить")
+  with cold:
+    st.subheader("На кирилиці")
   
-phrases_ukr = {'Майданчик для ігор': [{'Підемо в парк' : 'Andiamo al parco'},
+  phrases_ukr = {'Майданчик для ігор': [{'Підемо в парк' : 'Andiamo al parco'},
                                    {'Давай пограємо в хованки' : 'Giochiamo a nascondino'},
                                    {'Xодімо на гойдалки' : "Andiamo sull'altalena"},
                                    {'Підемо на гірку' : 'Andiamo sullo scivolo'},
@@ -118,28 +113,28 @@ phrases_ukr = {'Майданчик для ігор': [{'Підемо в парк
                                       {'Мені потрібні кольорові олівці' : 'Mi servirebbero le matite colorate'},
                                       {'Скільки це коштує?' : 'Quanto costa?'}]
                         }
-phrase_list_place = phrases_ukr[places]
-for phrasecouple in phrase_list_place:
-  for ukr, ita in phrasecouple.items():
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-      st.write(ukr)
-    with col2:
-      translation = translator.translate(rus, dest= 'it')
-      translated_text= translation.text
-      if translated_text != ita:
-        translated_text = ita
-      else:
-        pass
-      st.write(translated_text)
-    with col3:
-      tts1=gTTS(translated_text, lang = 'it')
-      tts1.save('your_file.mp3')
-      audio_file = open('your_file.mp3', 'rb')
-      st.audio(data=audio_file, format="audio/mp3", start_time = 0)
-    with col4:
-      transliterated_text = translit(translated_text, 'uk')
-      st.write(transliterated_text)
+  phrase_list_place = phrases_ukr[places]
+  for phrasecouple in phrase_list_place:
+    for ukr, ita in phrasecouple.items():
+      col1, col2, col3, col4 = st.columns(4)
+      with col1:
+        st.write(ukr)
+      with col2:
+        translation = translator.translate(rus, dest= 'it')
+        translated_text= translation.text
+        if translated_text != ita:
+          translated_text = ita
+        else:
+          pass
+        st.write(translated_text)
+      with col3:
+        tts1=gTTS(translated_text, lang = 'it')
+        tts1.save('your_file.mp3')
+        audio_file = open('your_file.mp3', 'rb')
+        st.audio(data=audio_file, format="audio/mp3", start_time = 0)
+      with col4:
+        transliterated_text = translit(translated_text, 'uk')
+        st.write(transliterated_text)
   else:
     pass
 
