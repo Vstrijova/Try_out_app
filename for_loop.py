@@ -26,7 +26,7 @@ if language == 'Русский':
   places = ['Площадка для игр', 'Школа', 'Магазин канцтоваров']
   images = ['playground.jpg', 'school.jpg', 'stationary_shop.jpg']
   for place, image in zip(places, images):
-    if place = placechoice:
+    if place == placechoice:
       st.image(image)
 cola, colb, colc, cold = st.columns(4)
 with cola:
