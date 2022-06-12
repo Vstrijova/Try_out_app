@@ -28,7 +28,7 @@ if language == 'Русский':
   if placechoice == 'Школа':
     image2 = Image.open('school.jpg')
     st.image(image2, caption='Photo by Kenny Eliason on Unsplash')
-   if placechoice == 'Магазин канцтоваров':
+  if placechoice == 'Магазин канцтоваров':
     image3 = Image.open('stationary_shop.jpg')
     st.image(image3, caption='Photo by @candelarms on Unsplash')
 
