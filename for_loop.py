@@ -35,7 +35,7 @@ if language == 'Русский':
   with colc:
     st.subheader("Вот как это звучит")
   with cold:
-  st.subheader("На кириллице")
+    st.subheader("На кириллице")
       
   phrases_ru = {'Площадка для игр': [{'Пойдем в парк' : 'Andiamo al parco'},
                                    {'Давай играть в прятки' : 'Giochiamo a nascondino'},
