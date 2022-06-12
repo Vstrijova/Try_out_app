@@ -79,11 +79,11 @@ if language == 'Русский':
     pass
   
 if language == 'Yкраїнський':
-  placechoiceukr = st.selectbox("Куди ти хочеш піти сьогодні? Bыбери одно з вказаних місць:", ('Майданчик для ігор', 'Школа', 'Магазин канцтоварів'))
-  placesukr = ['Майданчик для ігор', 'Школа', 'Магазин канцтоварів']
+  placechoice = st.selectbox("Куди ти хочеш піти сьогодні? Bыбери одно з вказаних місць:", ('Майданчик для ігор', 'Школа', 'Магазин канцтоварів'))
+  places = ['Майданчик для ігор', 'Школа', 'Магазин канцтоварів']
   images = ['playground.jpg', 'school.jpg', 'stationary_shop.jpg']
-  for place, image in zip(placesukr, images):
-    if placesukr == placechoiceukr:
+  for place, image in zip(places, images):
+    if place == placechoice:
       st.image(image)
     else:
       pass
