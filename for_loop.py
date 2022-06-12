@@ -84,15 +84,12 @@ for phrasecouple in phrase_list_place:
   
 if language == 'Yкраїнський':
   placechoiceukr = st.selectbox("Куди ти хочеш піти сьогодні? Bыбери одно з вказаних місць:", ('Майданчик для ігор', 'Школа', 'Магазин канцтоварів'))
-  if placechoiceukr == 'Майданчик для ігор':
-    image1 = Image.open('playground.jpg')
-    st.image(image1, caption='Photo by Pond Juprasong on Unsplash')
-  if placechoiceukr == 'Школа':
-    image2 = Image.open('school.jpg')
-    st.image(image2, caption='Photo by Kenny Eliason on Unsplash')
-  if placechoiceukr == 'Магазин канцтоварів':
-    image3 = Image.open('stationary_shop.jpg')
-    st.image(image3, caption='Photo by @candelarms on Unsplash')
+  
+  placesukr = ['Майданчик для ігор', 'Школа', 'Магазин канцтоварів']
+  images = ['playground.jpg', 'school.jpg', 'stationary_shop.jpg']
+  for place, image in zip(placesukr, images):
+    if placeukr == placechoiceukr:
+      st.image(image)
 else:
   pass
 cola, colb, colc, cold = st.columns(4)
