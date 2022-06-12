@@ -10,7 +10,7 @@ st.write( """ -  UK: Цей додаток має на меті допомогт
 st.write(""" -  RU: Это приложение нацелено на то, чтобы помочь украинским и русскоязычным детям выучить и использовать некоторые полезные фразы на итальянском языке""")
 purpose = st.checkbox('Click here if you want to know the purpose of this app in another language')
 if purpose:
-  lang = st.text_input("Insert the code of a language in which you want to know the purpose of the app:", help= "en for English, de for German, it for Italian, es for Spanish, pt for Portuguese")
+  lang = st.text_input("Insert the code of a language in which you want to know the purpose of the app:", 'it' help= "en for English, de for German, it for Italian, es for Spanish, pt for Portuguese")
   translation = translator.translate('The purpose of this app is to help Ukrainian children, both native speakers of Russian and Ukrainian, learn some useful phrases for interacting with their peers in different contexts. ', src='en', dest=lang)
   purposetext = translation.text
   st.write(purposetext)
