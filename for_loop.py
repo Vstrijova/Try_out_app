@@ -22,6 +22,7 @@ language = st.radio( "Виберіть мову - Выберите язык" , (
 
 if language == 'Русский':
   placechoice = st.selectbox("Куда ты хочешь пойти сегодня? Bыбери одно из указанных мест:", ('Площадка для игр', 'Школа', 'Магазин канцтоваров'))
+  
   places = ['Площадка для игр', 'Школа', 'Магазин канцтоваров']
   images = ['playground.jpg', 'school.jpg', 'stationary_shop.jpg']
   for place, image in zip(places, images):
